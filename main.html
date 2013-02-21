@@ -1,0 +1,50 @@
+<head>
+  <title>Hampton Roads Open Data List - Discover Government Data in Norfolk, Virginia Beach, and the 7 cities of HR - Maintained by Code for Virginia Beach</title>
+  <link href="//netdna.bootstrapcdn.com/bootswatch/2.3.0/united/bootstrap.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="/app.css" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+
+<body>
+  {{> navbar}}
+  <div class="container">
+    {{> page}}
+    {{> footer}}
+  </div>
+</body>
+
+<template name="navbar">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">HR Open Data List</a>
+      <ul class="nav">
+        {{#if showCreateDialog}}
+          <li class="active">
+        {{else}}
+          <li>
+        {{/if}}
+            <a href="#" class="btn-add">Add a Link</a></li>
+          </li>
+        </ul>
+      <form class="navbar-search pull-right">
+        <input type="text" class="search-query uneditable-input" placeholder="Search not working yet">
+      </form>
+
+    </div>
+  </div>
+</template>
+
+
+<template name="footer">
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> 
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script> 
+  <br /><br /><br /><hr>
+  <footer>
+    <p class="pull-left">
+      Built by <a href="http://codeforvirginiabeach.org">
+      Volunteers with Code for America</a>.  
+      Fork our Code at <a href="">GitHub</a>.
+    </p>
+  </footer>
+</template>

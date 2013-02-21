@@ -1,0 +1,80 @@
+<template name="page">
+  {{#if showCreateDialog}}
+    {{> createDialog}}
+  {{else}}
+    {{> heroBanner}}
+  {{/if}}
+    {{> listDatasets}}
+</template>
+
+<template name="heroBanner">
+  <div class="hero-unit center-text" style="background-color : silver;">
+    <h2>Hampton Roads Open Datasets</h2>
+    <h4>A growing list of links to public data that we can use.</h4>
+    <p>
+    <a href="#" class="btn btn-primary btn-large btn-add">
+      Add A Link
+    </a>
+  </p>
+  </div>
+</template>
+
+<template name="listDatasets">
+  {{#each datasets}}
+  <div class="well well-small">
+    <h3>{{name}} - ({{org}})
+    <a href="#" class="edit"><i class="icon-pencil"></i></a> 
+    <a href="#" class="remove"><i class="icon-trash"></i></a>
+  </h3>
+    <a href="{{link}}">{{linkText link}}</a><br/>
+    {{description}} 
+    
+  </div>
+  {{/each}}
+</template>
+
+<template name="createDialog">
+  <h2 class="center-text">Add a Local Government Open Dataset</h2>
+  <form class="form-horizontal center-form">
+   <div>
+    <fieldset>
+      <div class="control-group">
+        <label for="name" class="control-label">Dataset Name</label>
+        <div class="controls">
+          <input type="text" class="span4" placeholder="Dataset Name or Title" name="name" id="name">
+        </div>
+      </div>
+
+      <div class="control-group ">
+        <label for="org" class="control-label">Owner</label>
+        <div class="controls">
+          <input type="text" class="span4" name="org" id="org" placeholder="Which City, County, Org">
+        </div>
+      </div>
+
+      <div class="control-group ">
+        <label for="description" class="control-label">Description</label>
+        <div class="controls">
+          <textarea rows="4" class="span4" name="description" id="description" placeholder="Describe the data, it's purpose, or anything else about it. It must have purpose Mr. Anderson."></textarea>
+        </div>
+      </div>
+
+       <div class="control-group ">
+        <label for="link" class="control-label">Link</label>
+        <div class="controls">
+          <input type="text" class="span4" name="link" id="link" placeholder="http://dataurl">
+        </div>
+      </div>
+
+      <div class="control-group ">
+        <div class="controls">
+          <button type="button" class="btn btn-primary save">Submit Link</button>        &nbsp; &nbsp;
+          <button type="button" class="btn cancel">Cancel</button>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  </form>
+  <br/>
+</template>
+
